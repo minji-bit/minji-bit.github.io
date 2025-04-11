@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT's KOSTA - register</title>
+
+  <link rel="stylesheet" href="css/navbar.css" type="text/css" />
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+  <link rel="stylesheet" href="css/footer.css" type="text/css" />
+  <style>
+  #register{
+     padding:  20px 0px; /*상하 좌우 */
+   }
+
+   #register h1{
+    text-align: center;
+    padding: 5px;
+   }
+   
+   #register form{
+    height: 300px;
+    border:  1px solid gray;
+    padding: 40px;
+   }
+   
+   #register .form-item{
+     margin-bottom: 10px;
+   }
+
+   #register .form-item label{
+     width: 150px ;
+     display: inline-block;
+     font-size: 18px;
+   }
+
+   #register .form-item input{
+     font-size: 18px;
+     border: 1px skyblue solid;
+     width: 200px;
+   }
+
+   #register button{
+     float: right;
+     width: 100px;
+     font-size: 18px;
+     padding: 5px;
+     margin-top: 10px;
+   }
+
+  </style>
+
+</head>
+<body>
+	<nav id="navbar">
+		<!-- 5개의 메뉴생성 -->
+		  <ul>
+			<li class="nav-item logo"><a href="index.html"><img src="images/logo.jpg" alt="로고입니다." ></a></li>
+			<li class="nav-item"> <a href="personal.html">개인</a></li>
+			<li class="nav-item"><a href="busines.html">기업</a></li>
+			<li class="nav-item"><a href="login.html">로그인</a></li>
+			<li class="nav-item"><a href="register.html">회원가입</a></li>
+		   
+		  </ul>
+		</nav>
+		
+		<div id="banner">지금 당신의 행복! IT's KOSTA Life!</div> 
+
+<div id="container">
+<!-- navbar  추가  -->
+
+    
+  <div id="register">
+	  <h1>Register</h1>
+	  <form action="" method="post">
+	  <div class="form-item">
+	    <label for="name">이름</label>
+	    <input type="text" id="name" name="id">
+	 </div>
+	    
+	   <div class="form-item">
+	    <label for="email">이메일</label>
+	    <input type="email" id="email" name="email">
+	  </div>
+	  
+	   <div class="form-item">
+	    <label for="phone">연락처</label>
+	    <input type="text" id="phone" name="phone">
+	   </div>
+	   
+	    <div class="form-item">
+		    <label for="password">비밀번호</label>
+		    <input type="password" id="password" name="password">
+	    </div>
+	    
+	   <div class="form-item">
+		    <label for="password2">비밀번호 확인</label>
+		    <input type="password" id="password2" name="password2">
+	    </div>
+	    
+	    <hr>
+	    <button type="button">회원 가입</button> <!--전송기능을 일부러 넣어줘야 한다!-->
+	  </form>
+	  
+ </div> 
+ 
+  <!--footer영역 -->
+  <footer>
+	<ul>
+	  <li>경기도 오리역 한국소프트웨어진흥협회</li>
+	  <li>02-0000-0000</li>
+	</ul>
+  </footer>
+  
+    
+
+    </div>
+    <script>
+      let regName = document.getElementById("name");
+      let email = document.getElementById("email");
+      let phone = document.getElementById("phone");
+      let password = document.getElementById("password");
+      let password2 = document.getElementById("password2");
+      document.querySelector("button").addEventListener("click",()=>{
+          if(!regName.value || !email.value || !phone.value || !password.value || !password2.value){
+            alert("값을 입력해주세요");
+            return;
+          }
+          if(email.value.indexOf("@")===-1) {
+            alert("이메일 형식이 아닙니다.");
+            return;
+          }
+          if(password.value!==password2.value) {
+            alert("비밀번호가 일치하지 않습니다.");
+          }
+      })
+
+      //document.querySelectorAll("input")
+    </script>
+ </body>
+</html>
